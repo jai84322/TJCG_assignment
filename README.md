@@ -17,6 +17,7 @@
   lname: {string, mandatory},
   email: {string, mandatory, valid email, unique}, 
   password: {string, mandatory, minLen 8, maxLen 25},
+  isDeleted: {boolean, not mandatory},
   createdAt: {timestamp},
   updatedAt: {timestamp}
 }
@@ -27,6 +28,7 @@
 { 
   title: {string, mandatory},
   description: {string, mandatory}, 
+  isDeleted: {boolean, not mandatory},
   createdAt: {timestamp},
   updatedAt: {timestamp},
 }
@@ -38,6 +40,7 @@
   blogId: {ObjectId, mandatory},
   comment: {string, mandatory}, 
   commentBy: {string, mandatory},
+  isDeleted: {boolean, not mandatory},
   createdAt: {timestamp},
   updatedAt: {timestamp},
 }
