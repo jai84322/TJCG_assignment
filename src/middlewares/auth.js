@@ -9,7 +9,7 @@ const authentication = async function (req,res, next) {
             return res.status(400).send({status: false, msg : "please send the token"})
         }
     
-        let decodedToken = jwt.verify(token, "itissecreatkey")
+        let decodedToken = jwt.verify(token, "TJCG_assignment")
     
         if (decodedToken == undefined) {
             return res.status(400).send({status: false, msg : "invalid token"})

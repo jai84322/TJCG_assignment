@@ -11,11 +11,15 @@ const isValidObjectId = function (value) {
     return ObjectId.isValid(value)
 }
 
+const isValid = function (value) {
+    if (typeof value == "number" || typeof value == "boolean" || value == null ) return false
+    if (typeof value === "string" && value.trim().length == 0) return false
+    return true 
+};
 
 function isValidString(x){
     if(typeof x != "string") return false;
     const regEx = /^\s*[a-zA-Z]+(\.[a-zA-Z\s]+)*[a-zA-Z\s]\s*$/;
-    console.log(regEx.test(x)) 
     return regEx.test(x)
 }
 
@@ -34,4 +38,4 @@ function isValidPassword(x){
 }
 
 
-module.exports = {isValidRequest, isValidObjectId, isValidPassword, isValidString, isValidEmail, removeSpaces}
+module.exports = {isValidRequest, isValidObjectId, isValid, isValidPassword, isValidString, isValidEmail, removeSpaces}

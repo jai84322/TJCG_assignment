@@ -6,24 +6,24 @@ const { createComment, getComments, getSpecificComment, updateComment, deleteCom
 const { authentication } = require("../middlewares/auth");
 
 // user api's
-router.post("/createUser", createUser);
+router.post("/users", createUser);
 router.post("/login", loginUser);
 
 // blogapi's
 
-router.post("/createBlog", authentication, createBlog );
-router.get("/getBlogs", authentication, getBlogs);
-router.get("/getBlog/:id", authentication, getBlog );
-router.put("/updateBlog/:id", authentication, updateBlog);
-router.delete("/deleteBlog/:id", authentication, deleteBlog);
+router.post("/blogs", authentication, createBlog );
+router.get("/blogs", authentication, getBlogs);
+router.get("/blogs/:id", authentication, getBlog );
+router.put("/blogs/:id", authentication, updateBlog);
+router.delete("/blogs/:id", authentication, deleteBlog);
 
 // comment api's
 
-router.post("/createComment", authentication, createComment );
+router.post("/comments", authentication, createComment );
 router.get("/getcomments/:blogId", authentication, getComments);
-router.get("/getcomment/:commentId", authentication, getSpecificComment );
-router.put("/updateComment/:commentId", authentication, updateComment);
-router.delete("/deleteComment/:commentId", authentication, deleteComment);
+router.get("/comments/:id", authentication, getSpecificComment );
+router.put("/comments/:id", authentication, updateComment);
+router.delete("/comments/:id", authentication, deleteComment);
 
 
 
